@@ -4,7 +4,7 @@
  * Contains common definitions and header files used throughout your PROS
  * project.
  *
- * \copyright Copyright (c) 2017-2023, Purdue University ACM SIGBots.
+ * Copyright (c) 2017-2022, Purdue University ACM SIGBots.
  * All rights reserved.
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
@@ -12,7 +12,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-#ifndef _PROS_MAIN_H_
+#ifndef _PROS_MAIN_H_ //include guard
 #define _PROS_MAIN_H_
 
 /**
@@ -22,9 +22,9 @@
  *
  * For instance, E_CONTROLLER_MASTER has a shorter name: CONTROLLER_MASTER.
  * E_CONTROLLER_MASTER is pedantically correct within the PROS styleguide, but
- * not convenient for most student programmers.
+ * not convienent for most student programmers.
  */
-#define PROS_USE_SIMPLE_NAMES
+#define PROS_USE_SIMPLE_NAMES //basically PROS made their own slang
 
 /**
  * If defined, C++ literals will be available for use. All literals are in the
@@ -39,8 +39,9 @@
 /**
  * You should add more #includes here
  */
-//#include "okapi/api.hpp"
-//#include "pros/api_legacy.h"
+#include "okapi/api.hpp"
+#include "pros/api_legacy.h"
+
 
 /**
  * If you find doing pros::Motor() to be tedious and you'd prefer just to do
@@ -50,7 +51,7 @@
  * concurrently! The okapi namespace will export all symbols inside the pros
  * namespace.
  */
-// using namespace pros;
+using namespace pros;
 // using namespace pros::literals;
 // using namespace okapi;
 
@@ -70,6 +71,8 @@ void opcontrol(void);
 #ifdef __cplusplus
 }
 #endif
+extern bool Global; 
+extern int atn;
 
 #ifdef __cplusplus
 /**
