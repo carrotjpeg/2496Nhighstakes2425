@@ -4,7 +4,9 @@
 #include "auton.h"
 #include "main.h"
 #include "robot.h"
+#include "piston.h"
 #include "pros/motors.h"
+
 
 // 2496v
 #define LF_PORT 20;
@@ -29,6 +31,9 @@ pros::Motor RB(RB_PORT, pros::E_MOTOR_GEARSET_06, false);
 // intake
 pros::Motor INTAKE(INTAKE_PORT, pros::E_MOTOR_GEARSET_06, true);
 
+//pistons
+Piston clampPiston(false, 1);
+
 // angler for intake
 // pros::ADIDigitalOut piston ('E', false);
 
@@ -38,4 +43,4 @@ pros::Motor INTAKE(INTAKE_PORT, pros::E_MOTOR_GEARSET_06, true);
 pros::Imu imu(IMU_PORT);
 
 // controller
-pros::Controller con(pros::E_CONTROLLER_MASTER);
+pros::Controller controller(pros::E_CONTROLLER_MASTER);
