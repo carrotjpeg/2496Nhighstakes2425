@@ -4,15 +4,23 @@
 #include "main.h"
 #include "pros/adi.hpp"
 #include "pros/motors.h"
+#include "piston.h"
+
+#ifndef ROBOT_H_
+#define ROBOT_H_
 
 #ifndef ROBOTH
 #define ROBOTH
+
 
 //controller
 extern pros::Controller con;
 
 //rotation sensor
 extern pros::Rotation roto;
+
+//piston
+extern Piston clampPiston;
 
 //chassis motors
 extern pros::Motor LF;
@@ -52,5 +60,4 @@ extern pros::Motor INTAKE;
 
 //vision
 // extern pros::Vision vision;
-
-#endif
+#endif // ROBOT_H_

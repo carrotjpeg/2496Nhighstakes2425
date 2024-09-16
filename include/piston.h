@@ -6,7 +6,7 @@
 class Piston {
 private:
     bool piston_state;
-    pros::ADIDigitalOut p_out; 
+    pros::adi::DigitalOut p_out; 
 
 public:
 

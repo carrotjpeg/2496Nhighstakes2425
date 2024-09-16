@@ -1,4 +1,6 @@
 #include "main.h"
+#include "robot.h"
+
 
 /**
  * A callback function for LLEMU's center button.
@@ -88,8 +90,15 @@ void opcontrol() {
 		int left = controller.get_analog(ANALOG_LEFT_Y);
 		int right = controller.get_analog(ANALOG_RIGHT_Y);
 
-		left_mtr = left;
-		right_mtr = right;
+		LF.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+		LM.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+		LB.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+		RM.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+		RF.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+		RB.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+
+
+
 
 		pros::delay(20);
 	}
